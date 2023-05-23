@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User; //panggil model user
-// use App\Models\Log;
+use App\Models\Log;
 use Firebase\JWT\JWT; //panggil library jwt
 // use GuzzleHttp\Psr7\Message;
 use Illuminate\Support\Facades\Validator; //panggil library validator untuk validasi inputan
