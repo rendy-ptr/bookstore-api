@@ -3,15 +3,25 @@
 namespace App\Observers;
 
 use App\Models\User;
+use App\Models\Log; //panggil model log
 
 class UserObserver
 {
     /**
      * Handle the User "created" event.
      */
+    public function creating(User $user) {
+        $user->last_login = now();
+    }
+
     public function created(User $user): void
     {
         //
+        Log::create([
+            'module' => 'register',
+            'action' => 'register akun',
+            'useraccess' => $user->username
+        ]);
     }
 
     /**
